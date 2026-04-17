@@ -1,0 +1,26 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "title": "Python Meetup",
+    "description": "Monthly Python developer meetup with talks and networking.",
+    "location": "Tech Hub, San Francisco, CA",
+    "starts_at": "2026-05-01T18:00:00",
+    "ends_at": "2026-05-01T21:00:00"
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "title": "AWS re:Invent",
+    "description": "Amazon Web Services annual cloud computing conference.",
+    "location": "Las Vegas Convention Center, Las Vegas, NV",
+    "starts_at": "2026-12-01T09:00:00",
+    "ends_at": "2026-12-05T18:00:00"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "title": "FastAPI Workshop",
+    "description": "Hands-on workshop building REST APIs with FastAPI and Python.",
+    "location": "Online",
+    "starts_at": "2026-05-15T14:00:00",
+    "ends_at": "2026-05-15T17:00:00"
+  }
+]
