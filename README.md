@@ -1,25 +1,47 @@
 # docker-python-lambda
 
-A Python AWS Lambda function containerized with Docker.
+A FastAPI app deployed as an AWS Lambda function, containerized with Docker.
 
-## Usage
+## Requirements
 
-### Build the Docker image
+- [Docker](https://www.docker.com/)
+- [uv](https://docs.astral.sh/uv/)
+
+## Setup
 
 ```bash
-make build
+uv sync
 ```
 
-### Start the container locally
+## Commands
+
+| Command | Description |
+|---|---|
+| `make build` | Build the Docker image |
+| `make run` | Run FastAPI locally with hot reload (no Docker) |
+| `make serve` | Run FastAPI in Docker on `http://localhost:8000` |
+| `make start` | Run the Lambda RIE in Docker on port 9000 |
+| `make dev` | Run the Lambda RIE with local file mount (no rebuild needed) |
+| `make invoke` | Send a test invocation to the Lambda RIE |
+
+## Local Development
+
+For the fastest feedback loop, run FastAPI directly:
 
 ```bash
-make start
+make run
 ```
 
-### Invoke the Lambda function
+Then open:
+- `http://localhost:8000/` — root endpoint
+- `http://localhost:8000/health` — health check
+- `http://localhost:8000/docs` — interactive Swagger UI
 
-In a separate terminal, after the container is running:
+## Lambda Emulation
+
+To simulate the Lambda environment locally:
 
 ```bash
-make invoke
+make dev    # start container (mounts local main.py, no rebuild needed)
+make invoke # invoke in a separate terminal
 ```

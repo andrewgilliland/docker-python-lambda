@@ -1,10 +1,17 @@
-def handler(event, context):
-    print("Hello from docker-python-lambda!")
-    return {
-        "statusCode": 200,
-        "body": "Hello from docker-python-lambda!"
-    }
+from fastapi import FastAPI
+from mangum import Mangum
+
+app = FastAPI()
 
 
-if __name__ == "__main__":
-    handler({}, None)
+@app.get("/")
+def root():
+    return {"message": "Hello from docker-python-lambda!"}
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
+handler = Mangum(app)
